@@ -1,0 +1,25 @@
+.reserve-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .reserve-table th, .reserve-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reserve-table th {
+    background-color: #FF69B4; /* Pink color */
+    color: white;
+  }
+  
+  .reserve-table td {
+    background-color: #FCE4EC; /* Light Pink color */
+  }
+  
+  .reserve-table tr:hover {
+    background-color: #FFC0CB; /* Lighter Pink color on hover */
+  }
+  
