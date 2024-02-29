@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import InfoContext, { InfoContextProvider } from '../contexts/infoContext'
 import'./info.css';
+import {Link,useNavigate} from 'react-router-dom'
 export default function Information() {
   
   return (
@@ -11,9 +12,14 @@ export default function Information() {
   )
 }
 
+const navigate = useNavigate
+
 function InfoDashboard() {
   const {data} = useContext(InfoContext)
   // console.log(data)
+  const hdlEdit = () => {
+    navigate('/edit')
+  }
 
   return (
    <div>
@@ -25,27 +31,35 @@ function InfoDashboard() {
 
 function Infor({data}) {
 return (
-  <div>
-      <table className='user-table'>
-        <thead>
-          <tr>
-            <th>Card ID</th>
-            <th>Name</th>
-            <th>Lastname</th>
-            <th>Email</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{data.card_id}</td>
-            <td>{data.name}</td>
-            <td>{data.lastname}</td>
-            <td>{data.email}</td>
-            <td>{data.phone}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div className='container mx-auto p-4'>
+  <div className='flex items-center justify-between'>
+    <table className='user-table bg-white border border-gray-300'>
+      <thead className='bg-pink-500 text-white'>
+        <tr>
+          <th className='py-2 px-4 border-b'>Card ID</th>
+          <th className='py-2 px-4 border-b'>Name</th>
+          <th className='py-2 px-4 border-b'>Lastname</th>
+          <th className='py-2 px-4 border-b'>Email</th>
+          <th className='py-2 px-4 border-b'>Phone</th>
+          <th className='py-2 px-4 border-b'></th> {/* Empty header cell for the button */}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className='py-2 px-4 border-b'>{data.card_id}</td>
+          <td className='py-2 px-4 border-b'>{data.name}</td>
+          <td className='py-2 px-4 border-b'>{data.lastname}</td>
+          <td className='py-2 px-4 border-b'>{data.email}</td>
+          <td className='py-2 px-4 border-b'>{data.phone}</td>
+          <td className='py-2 px-4 border-b'>
+            <Link to='/edit'  className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded'>
+              Edit
+            </Link>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 )
 }

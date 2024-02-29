@@ -32,8 +32,16 @@ function AuthContextProvider(props) {
     localStorage.removeItem('token')
   }
 
+  const updateProfile = async (data) => {
+    const token = localStorage.getItem('token')
+    await axios.patch('http://localhost:8889/info/patch', data, {
+      headers: {Authorization: `Bearer ${token}`}
+    })
+    alert('Update Profile Success!!')
+  }
+
   return (
-    <AuthContext.Provider value={ {user, setUser, loading, logout} }>
+    <AuthContext.Provider value={ {user, setUser, loading, logout, updateProfile} }>
       {props.children}
     </AuthContext.Provider>
   )

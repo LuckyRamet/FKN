@@ -9,7 +9,7 @@ import HOME from '../layouts/Home'
 import Information from '../layouts/Information'
 import Reserved from '../layouts/Reserve'
 import AdminReserved from '../layouts/AdminReserve'
-
+import Edit from '../layouts/Edit'
 // import Reservatiolist from '../layouts/Reservationlist'
 
 
@@ -47,6 +47,7 @@ const userRouter = createBrowserRouter([
       { path: '/home', element: <HOME />},
       { path: '/Information', element: <Information/>},
       { path: '/reserve', element: <Reserved/>},
+      { path: '/edit', element: <Edit/>},
 
     ]
   }
@@ -66,6 +67,7 @@ const AdminRouter = createBrowserRouter([
       { path: '/home', element: <HOME />},
       { path: '/Information', element: <Information/>},
       { path: '/reserve', element: <AdminReserved/>},
+      
 
     ]
   }

@@ -12,15 +12,19 @@ const userNav = [
   { to : '/new', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑒' },
   
   { to : '/reserve', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑎𝑡𝑖𝑜𝑛 𝑙𝑖𝑠𝑡' },
+]
 
+const adminNav = [
+ 
+
+  { to : '/new', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑒' },
   
-  
-  
+  { to : '/reserve', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑎𝑡𝑖𝑜𝑛 𝑙𝑖𝑠𝑡' },
 ]
 
 export default function Header() {
   const {user, logout} = useAuth()
-  const finalNav = user?.id ? userNav : guestNav
+  const finalNav = user?.id ? user?.role ==='ADMIN' ? adminNav : userNav : guestNav
 
   const navigate = useNavigate()
 

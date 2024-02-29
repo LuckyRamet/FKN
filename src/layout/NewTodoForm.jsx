@@ -103,6 +103,7 @@ function FormNew({ user }) {
     className="input input-bordered w-full bg-pink-200"
     name="user_id"
     value={input.user_id}
+    
   />
 
   <div></div>
