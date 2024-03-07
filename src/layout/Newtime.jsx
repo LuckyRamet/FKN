@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ReservedContext, { ReservedContextProvider } from "../contexts/ReserveContext";
 import InfoContext, { InfoContextProvider } from "../contexts/infoContext";
 import AuthContext, { AuthContextProvider } from "../contexts/AuthContext";
-
-export default function NewTodoForm() {
+// import { Scheduler } from "@aldabil/react-scheduler";
+export default function Newtime() {
   return (
     <AuthContextProvider>
       <ReservedContextProvider>
@@ -45,23 +45,12 @@ function FormNew({ user }) {
 
   const [input, setInput] = useState({
     datetime: '',
-    phone: '',
-    disease: '',
-    user_id: user.id
+    
   })
 
 
   const hdlChange = (e) => {
     setInput((prv) => ({ ...prv, [e.target.name]: e.target.value }));
-    // console.log(input.datetime);
-    let datetime = new Date(input.datetime);
-    let hours = datetime.getHours()
-    let minutes = datetime.getMinutes()
-
-    if (hours >= '16') {
-      alert('หมดเวลาจองแล้วครับ')
-    }
-    // if (input.datetime )
   };
 
   const hdlSubmit = (e) => {
@@ -78,42 +67,10 @@ function FormNew({ user }) {
     </div>
     <input type="datetime-local" name="datetime" value={input.datetime} onChange={hdlChange} className="bg-pink-200" />
   </label>
-
-  <div className="label">
-    <span className="label-text text-pink-800">Phone</span>
-  </div>
-  <input
-    type="text"
-    placeholder="Enter your Phone"
-    className="input input-bordered w-full bg-pink-200"
-    name="phone"
-    value={input.phone}
-    onChange={hdlChange}
-  />
-
-  <div className="label">
-    <span className="label-text text-pink-800">Disease</span>
-  </div>
-  <input
-    type="text"
-    placeholder="Enter your Disease"
-    className="input input-bordered w-full bg-pink-200"
-    name="disease"
-    value={input.disease}
-    onChange={hdlChange}
-  />
-
-  <div>
-    <p>User ID</p>
-  </div>
-  <input
-    readOnly
-    type="text"
-    className="input input-bordered w-full bg-pink-200"
-    name="user_id"
-    value={input.user_id}
     
-  />
+  
+
+  
 
   <div></div>
 

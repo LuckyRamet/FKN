@@ -12,14 +12,18 @@ const userNav = [
   { to : '/new', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑒' },
   
   { to : '/reserve', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑎𝑡𝑖𝑜𝑛 𝑙𝑖𝑠𝑡' },
+
+  { to : '/show', text: '𝑆ℎ𝑜𝑤 𝑟𝑒𝑠𝑒𝑟𝑣𝑒𝑑' },
 ]
 
 const adminNav = [
- 
+  
 
-  { to : '/new', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑒' },
+  
   
   { to : '/reserve', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑎𝑡𝑖𝑜𝑛 𝑙𝑖𝑠𝑡' },
+
+
 ]
 
 export default function Header() {
@@ -42,7 +46,9 @@ export default function Header() {
           <img src="1.7.jpg" className="w-20 h-20 rounded-full border-2 border-pink-500" alt="" />
         </Link>
         <a className="btn btn-ghost text-xl">𝐻𝑜𝑠𝑝𝑖𝑡𝑎𝑙 𝑎𝑠 𝐼 𝑤𝑖𝑠ℎ𝑡 {user?.id ? user.username : 'Guest'}</a>
+           
       </div>
+      
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           {finalNav.map(el => (
@@ -57,8 +63,9 @@ export default function Header() {
           )}
         </ul>
       </div>
-    </div>
-    
+      
+    </div><br></br>
+    <p style={{ textAlign: 'center' }}>เปิดทำการถึง16:00</p>
     
   </div>
     

@@ -6,7 +6,7 @@ import ReservedContext, {
 import'./Rese.css';
 
 
-export default function AdminReserved() {
+export default function Show() {
     return (
         <ReservedContextProvider>
             <ReserveDashboard />
@@ -43,8 +43,8 @@ function ReserveItem({item}) {
     <table className='border-collapse w-full'>
       <tbody>
         <tr className='bg-pink-300'>
-          <th className='border p-2'>Name</th>
-          <td className='border p-2'>{item.name}</td>
+          <th className='border p-2'>User ID</th>
+          <td className='border p-2'>{item.user_id}</td>
         </tr>
         <tr>
           <th className='border p-2'>Datetime</th>
@@ -60,9 +60,7 @@ function ReserveItem({item}) {
         </tr>
       </tbody>
     </table>
-    <div className="flex items-center justify-end">
-      <button className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded" onClick={hdlDelete}>Delete</button>
-    </div>
+   
   </div>
 </div>
     )

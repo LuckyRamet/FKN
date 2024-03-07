@@ -6,6 +6,7 @@ const ReservedContext = createContext()
 function ReservedContextProvider(props) {
   const [data, setData] = useState(null)
   const [adminData, setAdminData] = useState(null)
+  const [trigger, setTrigger] = useState(false)
 
   useEffect(() => {
     const showBooking = async () => {
@@ -24,7 +25,7 @@ function ReservedContextProvider(props) {
     };
 
     showBooking();
-  }, [])
+  }, [trigger])
 
   useEffect(() => {
     const showBooking = async () => {
@@ -43,7 +44,7 @@ function ReservedContextProvider(props) {
     };
 
     showBooking();
-  }, [])
+  }, [trigger])
 
   const createBooking = async (input) => {
     try {
@@ -61,7 +62,8 @@ function ReservedContextProvider(props) {
 
   const deleteReserved = async (bookingId) => {
     try {
-        const re = await axios.delete(`http://localhost:8889/booking//delete/${bookingId}`);
+        const re = await axios.delete(`http://localhost:8889/booking/delete/${bookingId}`);
+        setTrigger(prv => !prv)
         if (re.status === 200) {
             alert('Delete Successfully')
         }
@@ -72,8 +74,23 @@ function ReservedContextProvider(props) {
     }
   }
 
+  const updateBooking = async (bookingId, data) => {
+    try {
+      const token = localStorage.getItem('token')
+      const rs = await axios.patch(`http://localhost:8889/booking/patch/${bookingId}`, data, {
+        headers: {Authorization: `Bearer ${token}`}
+      })
+      if (rs.status === 200) {
+        alert('Update Successfully')
+    }
+
+    } catch (error) {
+      alert(error.message)
+    }
+  }
+
   return (
-    <ReservedContext.Provider value={{ data, createBooking, adminData, deleteReserved }}>
+    <ReservedContext.Provider value={{ data, createBooking, adminData, deleteReserved, updateBooking }}>
       {props.children}
     </ReservedContext.Provider>
   );

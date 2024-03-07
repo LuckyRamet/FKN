@@ -10,6 +10,10 @@ import Information from '../layouts/Information'
 import Reserved from '../layouts/Reserve'
 import AdminReserved from '../layouts/AdminReserve'
 import Edit from '../layouts/Edit'
+import EditResrve from '../layouts/EditResrve'
+import Newtime from '../layout/Newtime'
+import Time from '../layouts/Time'
+import Show from '../layouts/Show'
 // import Reservatiolist from '../layouts/Reservationlist'
 
 
@@ -48,7 +52,10 @@ const userRouter = createBrowserRouter([
       { path: '/Information', element: <Information/>},
       { path: '/reserve', element: <Reserved/>},
       { path: '/edit', element: <Edit/>},
-
+      { path: '/editresrve/*', element: <EditResrve/>},
+      { path: '/newtime', element: <Newtime/>},
+      { path: '/time', element: <Time/>},
+      { path: '/show', element: <Show/>},
     ]
   }
 ])
@@ -67,8 +74,9 @@ const AdminRouter = createBrowserRouter([
       { path: '/home', element: <HOME />},
       { path: '/Information', element: <Information/>},
       { path: '/reserve', element: <AdminReserved/>},
-      
-
+      { path: '/newtime', element: <Newtime/>},
+      { path: '/time', element: <Time/>},
+      { path: '/show', element: <Show/>},
     ]
   }
 ])
