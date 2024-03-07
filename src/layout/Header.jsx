@@ -65,7 +65,7 @@ export default function Header() {
       </div>
       
     </div><br></br>
-    <p style={{ textAlign: 'center' }}>เปิดทำการถึง16:00</p>
+    <p style={{ textAlign: 'center' }}>เปิดทำการถึง 16:00</p>
     
   </div>
     
