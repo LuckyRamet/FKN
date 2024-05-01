@@ -44,7 +44,7 @@ function ReserveItem({ item }) {
           </tr>
           <tr>
             <th>Datetime</th>
-            <td>{item.datetime}</td>
+            <td>{new Date(item.datetime).toUTCString().split("GMT")}</td>
           </tr>
           <tr>
             <th>Phone</th>

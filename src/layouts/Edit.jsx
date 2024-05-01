@@ -74,18 +74,7 @@ export default function Edit() {
                         />
                     </div>
 
-                    <div className='mb-4'>
-                        <label htmlFor='phone' className='block text-gray-700 font-bold mb-2 text-pink-500'>
-                            Phone
-                        </label>
-                        <input
-                            onChange={hdlChange}
-                            type='tel'
-                            name='phone'
-                            value={update.phone}
-                            className='w-full border-2 border-pink-500 p-2 rounded focus:outline-none focus:border-pink-700 text-gray-500'
-                        />
-                    </div>
+                   
 
                     <button
                         type='submit'
@@ -142,18 +131,7 @@ export default function Edit() {
                         />
                     </div>
 
-                    <div className='mb-4'>
-                        <label htmlFor='phone' className='block text-gray-700 font-bold mb-2 text-pink-500'>
-                            Phone
-                        </label>
-                        <input
-                            readOnly
-                            type='tel'
-                            name='phone'
-                            value={update.phone}
-                            className='w-full border-2 border-pink-500 p-2 rounded focus:outline-none focus:border-pink-700 text-gray-300'
-                        />
-                    </div>
+                    
 
                     <button
                         onClick={hdlClick}

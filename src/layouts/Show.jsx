@@ -48,7 +48,7 @@ function ReserveItem({item}) {
         </tr>
         <tr>
           <th className='border p-2'>Datetime</th>
-          <td className='border p-2'>{item.datetime}</td>
+          <td>{new Date(item.datetime).toUTCString().split("GMT")}</td>
         </tr>
         <tr>
           <th className='border p-2'>Phone</th>

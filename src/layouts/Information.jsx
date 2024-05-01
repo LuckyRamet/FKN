@@ -40,7 +40,6 @@ return (
           <th className='py-2 px-4 border-b'>Name</th>
           <th className='py-2 px-4 border-b'>Lastname</th>
           <th className='py-2 px-4 border-b'>Email</th>
-          <th className='py-2 px-4 border-b'>Phone</th>
           <th className='py-2 px-4 border-b'></th> {/* Empty header cell for the button */}
         </tr>
       </thead>
@@ -50,7 +49,6 @@ return (
           <td className='py-2 px-4 border-b'>{data.name}</td>
           <td className='py-2 px-4 border-b'>{data.lastname}</td>
           <td className='py-2 px-4 border-b'>{data.email}</td>
-          <td className='py-2 px-4 border-b'>{data.phone}</td>
           <td className='py-2 px-4 border-b'>
             <Link to='/edit'  className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded'>
               Edit

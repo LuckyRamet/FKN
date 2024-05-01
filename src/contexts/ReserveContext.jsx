@@ -48,10 +48,11 @@ function ReservedContextProvider(props) {
 
   const createBooking = async (input) => {
     try {
-      console.log(input);
+      // console.log(input);
       const rs = await axios.post(`http://localhost:8889/booking/creacte/`, input)
       if (rs.status === 200) {
         alert('Create new OK')
+        location.replace('/reserve')
 
       }
 

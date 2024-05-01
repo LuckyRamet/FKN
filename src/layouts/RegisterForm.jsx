@@ -28,13 +28,13 @@ export default function RegisterForm() {
       // validation
       
       const rs = await axios.post('http://localhost:8889/auth/register', input)
-      console.log(rs)
+      // console.log(rs)
       if(rs.status === 200) {
         alert('Register Successful')
         navigate('/login')
       }
     }catch(err) {
-      console.log( err.message)
+      alert(err.response.data.error)
     }
 
   }
@@ -106,18 +106,7 @@ export default function RegisterForm() {
             onChange={ hdlChange }
           />
         </label>
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text text-pink-700">Phone</span>
-          </div>
-          <input
-            type="phone"
-            className="input input-bordered w-full max-w-xs"
-            name="phone"
-            value={input.phone}
-            onChange={ hdlChange }
-          />
-        </label>
+        
         <div className="flex gap-5 ">
           <button type="submit" className="btn btn-outline btn-pink text-white border-pink-500 hover:bg-pink-500 focus:ring-pink-500 focus:border-pink-500 active:bg-pink-700">Submit</button>
           <button type="reset" className="btn btn-outline btn-pink text-white border-pink-500 hover:bg-pink-500 focus:ring-pink-500 focus:border-pink-500 active:bg-pink-700">Reset</button>

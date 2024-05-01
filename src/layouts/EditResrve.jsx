@@ -115,7 +115,7 @@ function FormEdit({ reserved }) {
                     </button>
                 </form>
             </div>) : (<div className='max-w-md mx-auto mt-8 bg-pink-100 p-8 rounded shadow-lg'>
-                <h2 className='text-2xl font-bold mb-4 text-pink-500'>Edit Information</h2>
+                <h2 className='text-2xl font-bold mb-4 text-pink-500'>Edit Reserve</h2>
                 <form>
                     <div className='mb-4'>
                         <label htmlFor='name' className='block text-gray-700 font-bold mb-2 text-pink-500'>

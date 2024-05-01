@@ -13,7 +13,7 @@ const userNav = [
   
   { to : '/reserve', text: '𝑅𝑒𝑠𝑒𝑟𝑣𝑎𝑡𝑖𝑜𝑛 𝑙𝑖𝑠𝑡' },
 
-  { to : '/show', text: '𝑆ℎ𝑜𝑤 𝑟𝑒𝑠𝑒𝑟𝑣𝑒𝑑' },
+  { to : '/show', text: '𝑆ℎ𝑜𝑤 𝑎𝑙𝑙 𝑟𝑒𝑠𝑒𝑟𝑣𝑒𝑑' },
 ]
 
 const adminNav = [
@@ -65,7 +65,7 @@ export default function Header() {
       </div>
       
     </div><br></br>
-    <p style={{ textAlign: 'center' }}>เปิดทำการถึง 16:00</p>
+    <p style={{ textAlign: 'center' }}>เปิดทำการ 9:00 - 16:00</p>
     
   </div>
     

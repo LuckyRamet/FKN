@@ -34,7 +34,7 @@ export default function LoginForm() {
       setUser(rs1.data)
 
     } catch (err) {
-      console.log(err.message)
+      alert(err.response.data.error)
     }
   }
 
@@ -72,7 +72,7 @@ export default function LoginForm() {
           </label>
 
           <div className="flex justify-center">
-          <button type="submit" className="btn btn-outline btn-pink text-white border-pink-500 hover:bg-pink-500 focus:ring-pink-500 focus:border-pink-500 active:bg-pink-700">Login</button>
+          <button type="login" className="btn btn-outline btn-pink text-white border-pink-500 hover:bg-pink-500 focus:ring-pink-500 focus:border-pink-500 active:bg-pink-700">Login</button>
 </div>
 
 
