@@ -24,13 +24,13 @@ export default function LoginForm() {
       e.preventDefault()
 
       // validation
-      const rs = await axios.post('http://localhost:8889/auth/login', input)
+      const rs = await axios.post('http://localhost:8000/auth/login', input)
       console.log(rs.data.token)
       localStorage.setItem('token', rs.data.token)
-      const rs1 = await axios.get('http://localhost:8889/auth/me', {
+      const rs1 = await axios.get('http://localhost:8000/auth/me', {
         headers: { Authorization: `Bearer ${rs.data.token}` }
       })
-      navigate('/home')
+      navigate('/Home')
       setUser(rs1.data)
 
     } catch (err) {

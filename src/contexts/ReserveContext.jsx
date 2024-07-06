@@ -13,7 +13,7 @@ function ReservedContextProvider(props) {
       try {
         let token = localStorage.getItem('token')
         if(!token) { return }
-        const rs = await axios.get("http://localhost:8889/booking/show",{
+        const rs = await axios.get("http://localhost:8000/booking/show",{
           headers : { Authorization : `Bearer ${token}` }
         })
         // console.log(rs.data)
@@ -32,7 +32,7 @@ function ReservedContextProvider(props) {
       try {
         let token = localStorage.getItem('token')
         if(!token) { return }
-        const rs = await axios.get("http://localhost:8889/booking/admin/show",{
+        const rs = await axios.get("http://localhost:8000/booking/admin/show",{
           headers : { Authorization : `Bearer ${token}` }
         })
         // console.log(rs.data)
@@ -49,7 +49,7 @@ function ReservedContextProvider(props) {
   const createBooking = async (input) => {
     try {
       // console.log(input);
-      const rs = await axios.post(`http://localhost:8889/booking/creacte/`, input)
+      const rs = await axios.post(`http://localhost:8000/booking/creacte`, input)
       if (rs.status === 200) {
         alert('Create new OK')
         location.replace('/reserve')
@@ -63,7 +63,7 @@ function ReservedContextProvider(props) {
 
   const deleteReserved = async (bookingId) => {
     try {
-        const re = await axios.delete(`http://localhost:8889/booking/delete/${bookingId}`);
+        const re = await axios.delete(`http://localhost:8000/booking/delete/${bookingId}`);
         setTrigger(prv => !prv)
         if (re.status === 200) {
             alert('Delete Successfully')
@@ -78,7 +78,7 @@ function ReservedContextProvider(props) {
   const updateBooking = async (bookingId, data) => {
     try {
       const token = localStorage.getItem('token')
-      const rs = await axios.patch(`http://localhost:8889/booking/patch/${bookingId}`, data, {
+      const rs = await axios.patch(`http://localhost:8000/booking/patch/${bookingId}`, data, {
         headers: {Authorization: `Bearer ${token}`}
       })
       if (rs.status === 200) {

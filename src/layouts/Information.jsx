@@ -12,6 +12,7 @@ export default function Information() {
   )
 }
 
+
 const navigate = useNavigate
 
 function InfoDashboard() {

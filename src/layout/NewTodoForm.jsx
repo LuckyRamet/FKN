@@ -60,12 +60,15 @@ function FormNew({ user }) {
   const hdlChange = (e) => {
     setInput((prv) => ({ ...prv, [e.target.name]: e.target.value }));
     const selectedDate = e.target.value;
+    console.log(input.datetime)
     const currentDate = new Date().toISOString().split('T')[0];
-  
-    if (selectedDate < currentDate) {
-      alert("กรุณาเลือกวันที่ที่มากกว่าหรือเท่ากับวันปัจจุบัน");
-      location.reload()
-    }
+    console.log(selectedDate,"selected")
+    console.log(currentDate,"current")
+
+    // if (selectedDate < currentDate) {
+    //   alert("กรุณาเลือกวันที่ที่มากกว่าหรือเท่ากับวันปัจจุบัน");
+    //   location.reload()
+    // }
   };
 
   const hdlSubmit = (e) => {

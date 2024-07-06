@@ -7,16 +7,20 @@ const InfoContext = createContext()
 function InfoContextProvider(props) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-
+  const [member,setMember] = useState(null)
   useEffect( ()=>{
     const run = async () => {
       try {
         setLoading(true)
         let token = localStorage.getItem('token')
         if(!token) { return }
-        const rs = await axios.get('http://localhost:8889/info/infomation', {
+        const rs = await axios.get('http://localhost:8000/info/infomation', {
           headers : { Authorization : `Bearer ${token}` }
         })
+        const wala = await axios.get('http://localhost:8000/info/getall', {
+          headers : { Authorization : `Bearer ${token}` }
+        })
+        setMember(wala.data)
         setData(rs.data)
       }catch(err) {
         console.log(err.message)
@@ -29,7 +33,7 @@ function InfoContextProvider(props) {
 
 
   return (
-    <InfoContext.Provider value={ {data, setData, loading} }>
+    <InfoContext.Provider value={ {data, setData, loading,member} }>
       {props.children}
     </InfoContext.Provider>
   )

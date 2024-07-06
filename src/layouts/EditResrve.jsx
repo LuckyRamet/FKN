@@ -17,7 +17,7 @@ export default function Edit() {
             try {
                 let token = localStorage.getItem('token')
                 if (!token) { return }
-                const rs = await axios.get(`http://localhost:8889/booking/${id}`, {
+                const rs = await axios.get(`http://localhost:8000/booking/${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 })
                 // console.log(rs.data)

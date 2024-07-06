@@ -15,12 +15,12 @@ export default function Reserved() {
 
 function ReserveDashboard() {
   const { data } = useContext(ReservedContext);
-
-
+  
   return (
     <div>
       {data && data.map(el => (
         <ReserveItem key={el.id} item={el} />
+        
       ))}
     </div>
   )
@@ -33,13 +33,13 @@ function ReserveItem({ item }) {
   const hdlClick = () => {
     navigate('/editresrve/' + item.id)
   }
-
+  
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <table className='reserve-table'>
         <tbody>
           <tr>
-            <th>User ID</th>
+            <th>name</th>
             <td>{item.user_id}</td>
           </tr>
           <tr>
@@ -54,7 +54,9 @@ function ReserveItem({ item }) {
             <th>Disease</th>
             <td>{item.disease}</td>
           </tr>
-
+          <tr>
+      
+    </tr>
         </tbody>
       </table>
 

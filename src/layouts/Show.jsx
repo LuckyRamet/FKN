@@ -44,7 +44,7 @@ function ReserveItem({item}) {
       <tbody>
         <tr className='bg-pink-300'>
           <th className='border p-2'>User ID</th>
-          <td className='border p-2'>{item.user_id}</td>
+          <td className='border p-2'>{item.name}</td>
         </tr>
         <tr>
           <th className='border p-2'>Datetime</th>
