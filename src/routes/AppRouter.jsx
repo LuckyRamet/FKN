@@ -25,7 +25,7 @@ const guestRouter = createBrowserRouter([
       <Outlet />
     </>,
     children: [
-      { index: true, element: <LoginForm /> },
+      { index: true, element: <HOME /> },
       { path: '/register', element: <RegisterForm />},
       { path: '/login', element: <LoginForm />},
       { path: '/home', element: <HOME />},

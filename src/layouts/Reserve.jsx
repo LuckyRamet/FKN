@@ -39,8 +39,7 @@ function ReserveItem({ item }) {
       <table className='reserve-table'>
         <tbody>
           <tr>
-            <th>name</th>
-            <td>{item.user_id}</td>
+            
           </tr>
           <tr>
             <th>Datetime</th>

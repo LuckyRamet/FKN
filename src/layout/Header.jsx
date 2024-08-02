@@ -2,8 +2,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import useAuth from '../hooks/useAuth';
 
 const guestNav = [
-  { to : '/', text: 'Login' },
-  { to : '/register', text: 'Register' },
+  
 ]
 
 const userNav = [
@@ -42,13 +41,13 @@ export default function Header() {
     <div className="container">
     <div className="navbar bg-base-100">
       <div className="flex-1">
-      <Link to={"/Home"}>
+      
+           <Link to={"/Home"}>
           <img src="1.7.jpg" className="w-20 h-20 rounded-full border-2 border-pink-500" alt="" />
           
         </Link>
           
         <a className="btn btn-ghost text-xl">𝐻𝑜𝑠𝑝𝑖𝑡𝑎𝑙 𝑎𝑠 𝐼 𝑤𝑖𝑠ℎ𝑡 {user?.id ? user.username : 'Guest'}</a>
-           
       </div>
       
       <div className="flex-none">
@@ -66,8 +65,8 @@ export default function Header() {
         </ul>
       </div>
       
-    </div><br></br>
-    <p style={{ textAlign: 'center' }}>เปิดทำการ 9:00 - 16:00</p>
+    </div>
+    
     
     
 
